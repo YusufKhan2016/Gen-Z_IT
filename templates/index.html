@@ -1,0 +1,565 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en" class="no-js">
+<!--<![endif]-->
+
+<head>
+    <!-- meta charec set -->
+    <meta charset="utf-8">
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- Page Title -->
+    <title>Gen-Z IT</title>
+    <!-- Meta Description -->
+    <meta name="description" content="Blue One Page Creative HTML5 Template">
+    <meta name="keywords"
+        content="one page, single page, onepage, responsive, parallax, creative, business, html5, css3, css3 animation">
+    <meta name="author" content="Muhammad Morshed">
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Font -->
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel='stylesheet' type='text/css'>
+
+    <!-- CSS
+		================================================== -->
+    <!-- Fontawesome Icon font -->
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <!-- Twitter Bootstrap css -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- jquery.fancybox  -->
+    <link rel="stylesheet" href="{% static 'css/jquery.fancybox.css' %}">
+    <!-- animate -->
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <!-- media-queries -->
+    <link rel="stylesheet" href="{% static 'css/media-queries.css' %}">
+
+    <!-- Modernizer Script for old Browsers -->
+    <script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+
+</head>
+
+<body id="body">
+
+    <!-- preloader -->
+    <div id="preloader">
+        <img src="{% static 'img/preloader.gif' %}" alt="Preloader">
+    </div>
+    <!-- end preloader -->
+
+    <!-- 
+        Fixed Navigation
+        ==================================== -->
+    <header id="navigation" class="navbar-fixed-top navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <!-- responsive nav button -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <i class="fa fa-bars fa-2x"></i>
+                </button>
+                <!-- /responsive nav button -->
+
+                <!-- logo -->
+                <a class="navbar-brand" href="#body">
+                    <h1 id="logo" >
+                        <img src="{{logo.img.url}}" alt="Gen-z IT" style="width: 5px;">
+                    </h1>
+                </a>
+                <!-- /logo -->
+            </div>
+
+            <!-- main nav -->
+            <nav class="collapse navbar-collapse navbar-right" role="navigation">
+                <ul id="nav" class="nav navbar-nav">
+                    <li class="current"><a href="#body">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#works">Work</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <!-- /main nav -->
+
+        </div>
+    </header>
+    <!--
+        End Fixed Navigation
+        ==================================== -->
+
+
+
+    <!--
+        Home Slider
+        ==================================== -->
+
+    <section id="slider">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+            <!-- Indicators bullet -->
+            <ol class="carousel-indicators">
+                {% for slide in slides %}
+                    <li data-target="#carousel-example-generic" data-slide-to="{{ forloop.counter0 }}" {% if forloop.first %} class="active" {% endif %}></li>
+                {% endfor %}
+                <!-- <li data-target="#carousel-example-generic" data-slide-to="1"></li> -->
+            </ol>
+            <!-- End Indicators bullet -->
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+
+                <!-- single slide -->
+
+                {% for slide in slides %}
+                <div class="item {% if forloop.first %}active{% endif %}" style="background-image: url('{{ slide.bg_img.url }}');">
+                    <div class="carousel-caption">
+                        <h2 data-wow-duration="700ms" data-wow-delay="500ms" class="wow bounceInDown animated">
+                            {{slide.title| safe}}</h2>
+                        <h3 data-wow-duration="1000ms" class="wow slideInLeft animated"> {{slide.subtitle|safe}}</h3>
+                        <p data-wow-duration="1000ms" class="wow slideInRight animated">{{ slide.description|safe}}
+                        </p>
+
+                        <ul class="social-links text-center">
+                            <li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
+                            <li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
+                            <li><a href=""><i class="fa fa-linkedin fa-lg"></i></a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- end single slide -->
+
+            </div>
+            <!-- End Wrapper for slides -->
+
+        </div>
+    </section>
+
+    <!--
+        End Home SliderEnd
+        ==================================== -->
+
+    <!--
+        Features
+        ==================================== -->
+
+    <section id="features" class="features">
+        <div class="container">
+            <div class="row">
+
+                <div class="sec-title text-center mb50 wow bounceInDown animated" data-wow-duration="500ms">
+                    <h2>Features</h2>
+                    <div class="devider"><i class="fa fa-lg"></i></div>
+                </div>
+
+                <!-- service item -->
+                <div class="col-md-4 wow fadeInLeft" data-wow-duration="500ms">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fa fa-github fa-2x"></i>
+                        </div>
+
+                        <div class="service-desc">
+                            <h3>Branding</h3>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- end service item -->
+
+                <!-- service item -->
+                <div class="col-md-4 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="500ms">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fa fa-pencil fa-2x"></i>
+                        </div>
+
+                        <div class="service-desc">
+                            <h3>Development</h3>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- end service item -->
+
+                <!-- service item -->
+                <div class="col-md-4 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="900ms">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fa fa-bullhorn fa-2x"></i>
+                        </div>
+
+                        <div class="service-desc">
+                            <h3>Consulting</h3>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- end service item -->
+
+            </div>
+        </div>
+    </section>
+
+    <!--
+        End Features
+        ==================================== -->
+
+
+    <!--
+        Courses Section
+        ==================================== -->
+
+    <section id="works" class="works clearfix">
+        <div class="container">
+            <div class="row">
+
+                <div class="sec-title text-center">
+                    <h2>Courses</h2>
+                    <div class="devider"><i class="fa fa-lg"></i></div>
+                </div>
+
+                <div class="sec-sub-title text-center">
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                        totam rem aperiam, eaque ipsa quae ab illo inventore</p>
+                </div>
+
+                <div class="work-filter wow fadeInRight animated" data-wow-duration="500ms">
+                    <ul class="text-center">
+                        <li><a href="javascript:;" data-filter="all" class="active filter">All</a></li>
+                        {% for category in categories%}
+                            <li><a href="javascript:;" data-filter=".{{category}}" class="filter">{{category.name}}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="project-wrapper">
+            
+            {% for course in courses %}
+            <figure class="mix work-item {{course.category}}">
+                <img src="{{course.image.url}}" alt="">
+                <figcaption class="overlay">
+                    <a href="#" data-toggle="modal" data-target="#courseModal{{course.id}}"> 
+                        <h4>{{course.title}}</h4>
+                    </a>
+                    
+            </figcaption>
+            </figure>
+
+            <!-- Modal Structure (add this somewhere in your HTML) -->
+            <div  class="modal fade {{course.category}}" id="courseModal{{course.id}}" tabindex="-1" role="dialog" aria-labelledby="courseModal{{course.id}}Label" aria-hidden="true">
+                <div class="modal-dialog" role="document" style="width: 1200px">
+                    <div class="modal-content desc-border" >
+                        <div class="modal-header desc-header" >
+                            <h5 class="modal-title" id="courseModal{{course.id}}Label">{{course.title}}</h5>
+                            
+                        </div>
+                        <div class="modal-body" >
+                            {{course.description| safe}}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            {% endfor %}
+            
+        </div>
+
+
+    </section>
+
+    <!--
+        End of courses
+        ==================================== -->
+
+    <!--
+        Meet Our Team
+        ==================================== -->
+
+    <section id="team" class="team">
+        <div class="container">
+            <div class="row">
+
+                <div class="sec-title text-center wow fadeInUp animated" data-wow-duration="700ms">
+                    <h2>Our Mentors</h2>
+                    <div class="devider"><i class="fa fa-lg"></i></div>
+                </div>
+
+                <div class="sec-sub-title text-center wow fadeInRight animated" data-wow-duration="500ms">
+                    <p>Ready to reach your full potential? Our mentors are here to help</p>
+                </div>
+
+                <!-- single member -->
+                {% for mentor in mentors %}
+                <figure class="team-member col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated"
+                    data-wow-duration="500ms">
+                    <div class="member-thumb">
+                        <img src="{{mentor.img.url}}" alt="Team Member" class="img-responsive">
+                        <figcaption class="overlay">
+                            
+                            <ul class="social-links text-center">
+                                {% for socialMediaProfile in socialMediaProfiles %}
+                                    {% if socialMediaProfile.team_member == mentor %}
+                                        <li><a href="{{socialMediaProfile.link}}" target="_blank"><i class="fa fa-{{socialMediaProfile.platform}} fa-lg"></i></a></li>
+                                    {% endif %}
+                                {% endfor %}                      
+                            </ul>
+                        </figcaption>
+                    </div>
+                    <h4>{{mentor.name}}</h4>
+                    <span>{{mentor.rank}}</span>
+                </figure>
+                {% endfor %}
+                <!-- end single member -->
+
+            </div>
+        </div>
+    </section>
+
+    <!--
+        End Meet Our Team
+        ==================================== -->
+
+
+    <!--
+        Contact Us
+        ==================================== -->
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="row mb50">
+
+                <div class="sec-title text-center mb50 wow fadeInDown animated" data-wow-duration="500ms">
+                    <h2>Let’s Discuss</h2>
+                    <div class="devider"><i class="fa    fa-lg"></i></div>
+                </div>
+
+                <div class="sec-sub-title text-center wow rubberBand animated" data-wow-duration="1000ms">
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                        totam rem aperiam, eaque ipsa quae ab illo inventore</p>
+                </div>
+
+                <!-- contact address -->
+                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 wow fadeInLeft animated" data-wow-duration="500ms">
+                    <div class="contact-address">
+                        <p>2nd Floor, Ashulia New Market, Ashulia -1341</p>
+                        <p>Savar, Dhaka, Bangladesh</p>
+                        <p>(401) 1234 567</p>
+                    </div>
+                </div>
+                <!-- end contact address -->
+
+                <!-- contact form -->
+                <div class="col-lg-8 col-md-8 col-sm-7 col-xs-12 wow fadeInDown animated" data-wow-duration="500ms"
+                    data-wow-delay="300ms">
+                    <div class="contact-form">
+                        <h3>Say hello!</h3>
+                        <form action="#" id="contact-form">
+                            <div class="input-group name-email">
+                                <div class="input-field">
+                                    <input type="text" name="name" id="name" placeholder="Name" class="form-control">
+                                </div>
+                                <div class="input-field">
+                                    <input type="email" name="email" id="email" placeholder="Email"
+                                        class="form-control">
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <textarea name="message" id="message" placeholder="Message"
+                                    class="form-control"></textarea>
+                            </div>
+                            <div class="input-group">
+                                <input type="submit" id="form-submit" class="pull-right" value="Send message">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- end contact form -->
+
+                <!-- footer social links -->
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 wow fadeInRight animated" data-wow-duration="500ms"
+                    data-wow-delay="600ms">
+                    <ul class="footer-social">
+                        <li><a href="#"><i class="fa fa-twitter fa-2x"></i></a></li>
+                        <li><a href="#"><i class="fa fa-behance fa-2x"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble fa-2x"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook fa-2x"></i></a></li>
+                    </ul>
+                </div>
+                <!-- end footer social links -->
+
+            </div>
+        </div>
+
+        <!-- Google map -->
+        <!-- Google Map -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1579.0805173331469!2d90.3305695318239!3d23.89497653706728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c378e8e24cf5%3A0x736cbe1554de5569!2sGen-Z%20IT%20Institute!5e0!3m2!1sen!2sbd!4v1730530636663!5m2!1sen!2sbd" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <!-- End Google map -->
+
+    </section>
+
+    <!--
+        End Contact Us
+        ==================================== -->
+
+
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="row">
+        
+                <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms">
+                    <div class="footer-single">
+                        <img src="{{logo.img.url}}" alt="">
+                        <p>eusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                </div>
+        
+                <!-- Adding col-md-offset-3 to move "Explore" section to the right -->
+                <div class="col-md-3 col-md-offset-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms"
+                    data-wow-delay="600ms">
+                    <div class="footer-single">
+                        <h6>Explore</h6>
+                        <ul>
+                            <li><a href="#">Inside Us</a></li>
+                            <li><a href="#">Flickr</a></li>
+                            <li><a href="#">Google</a></li>
+                            <li><a href="#">Forum</a></li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms"
+                    data-wow-delay="900ms">
+                    <div class="footer-single">
+                        <h6>Support</h6>
+                        <ul>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Market Blog</a></li>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Pressroom</a></li>
+                        </ul>
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+        
+    </footer>
+
+    <a href="javascript:void(0);" id="back-top"><i class="fa fa-angle-up fa-3x"></i></a>
+
+    <!-- Essential jQuery Plugins
+		================================================== -->
+    <!-- Main jQuery -->
+    <script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+    <!-- Single Page Nav -->
+    <script src="{% static 'js/jquery.singlePageNav.min.js' %}"></script>
+    <!-- Twitter Bootstrap -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- jquery.fancybox.pack -->
+    <script src="{% static 'js/jquery.fancybox.pack.js' %}"></script>
+    <!-- jquery.mixitup.min -->
+    <script src="{% static 'js/jquery.mixitup.min.js' %}"></script>
+    <!-- jquery.parallax -->
+    <script src="{% static 'js/jquery.parallax-1.1.3.js' %}"></script>
+    <!-- jquery.countTo -->
+    <script src="{% static 'js/jquery-countTo.js' %}"></script>
+    <!-- jquery.appear -->
+    <script src="{% static 'js/jquery.appear.js' %}"></script>
+    <!-- Contact form validation -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.32/jquery.form.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"></script>
+    
+    <!-- jquery easing -->
+    <script src="{% static 'js/jquery.easing.min.js' %}"></script>
+    <!-- jquery easing -->
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <script>
+        var wow = new WOW({
+            boxClass: 'wow',      // animated element css class (default is wow)
+            animateClass: 'animated', // animation css class (default is animated)
+            offset: 120,          // distance to the element when triggering the animation (default is 0)
+            mobile: false,       // trigger animations on mobile devices (default is true)
+            live: true        // act on asynchronously loaded content (default is true)
+        }
+        );
+        wow.init();
+    </script>
+    <!-- Custom Functions -->
+    <script src="{% static 'js/custom.js' %}"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            /* ========================================================================= */
+            /*	Contact Form
+            /* ========================================================================= */
+
+            $('#contact-form').validate({
+                rules: {
+                    name: {
+                        required: true,
+                        minlength: 2
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    message: {
+                        required: true
+                    }
+                },
+                messages: {
+                    name: {
+                        required: "come on, you have a name don't you?",
+                        minlength: "your name must consist of at least 2 characters"
+                    },
+                    email: {
+                        required: "no email, no message"
+                    },
+                    message: {
+                        required: "um...yea, you have to write something to send this form.",
+                        minlength: "thats all? really?"
+                    }
+                },
+                submitHandler: function (form) {
+                    $(form).ajaxSubmit({
+                        type: "POST",
+                        data: $(form).serialize(),
+                        url: "process.php",
+                        success: function () {
+                            $('#contact-form :input').attr('disabled', 'disabled');
+                            $('#contact-form').fadeTo("slow", 0.15, function () {
+                                $(this).find(':input').attr('disabled', 'disabled');
+                                $(this).find('label').css('cursor', 'default');
+                                $('#success').fadeIn();
+                            });
+                        },
+                        error: function () {
+                            $('#contact-form').fadeTo("slow", 0.15, function () {
+                                $('#error').fadeIn();
+                            });
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
