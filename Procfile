@@ -1,0 +1,1 @@
+web gunicorn Gen_z_IT.wsgi:application --log-file -
