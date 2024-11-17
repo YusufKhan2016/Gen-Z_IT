@@ -8,7 +8,7 @@ class RedirectToWwwMiddleware:
 
     def __call__(self, request):
         host = request.get_host()
-        if host == "gen-zit.com" or host == "http://gen-zit.com":
+        if host == "gen-zit.com" or host == "https://gen-zit.com":
             return HttpResponsePermanentRedirect("https://www.gen-zit.com" + request.path)
         response = self.get_response(request)
         return response
