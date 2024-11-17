@@ -1,5 +1,5 @@
-import os
 import django_heroku
+import os
 import dj_database_url
 from pathlib import Path
 
@@ -67,10 +67,10 @@ WSGI_APPLICATION = 'Gen_z_IT.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Genz',
-        'USER': 'postgres',
-        'PASSWORD': '1234',
-        'HOST': 'localhost',
+        'NAME': 'daktkk1tov3tl4',
+        'USER': 'ud002n60st8l30',
+        'PASSWORD': 'p60769b7b978fdad28b0733275c418c4a25fba140725db1f6b6eb663e7a0d667d',
+        'HOST': 'c3cj4hehegopde.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com',
         'PORT': '5432'
     }
 }
