@@ -12,7 +12,7 @@ class RedirectToWwwMiddleware:
     def __call__(self, request):
         logger.info(f"Request host: {request.get_host()}")
         host = request.get_host()
-        if host == "gen-zit.com":
+        if host == "gen-zit.com" or host == "http://gen-zit.com":
             return HttpResponsePermanentRedirect("https://www.gen-zit.com" + request.path)
         response = self.get_response(request)
         return response
