@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-je03i@yuca03u44g6m8nlydor4dklwk5^^dfvsss-q0l7j_kvn
 DEBUG = True
 
 ALLOWED_HOSTS = ["gen-z-af98125a7d9a.herokuapp.com", "gen-zit.com", "www.gen-zit.com"]
-SECURE_SSL_REDIRECT = True  # Redirect all HTTP requests to HTTPS
+# SECURE_SSL_REDIRECT = True  # Redirect all HTTP requests to HTTPS
 
 
 # Application definition
